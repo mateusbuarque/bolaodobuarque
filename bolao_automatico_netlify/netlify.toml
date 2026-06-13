@@ -1,6 +1,0 @@
-[build]
-  publish = "."
-  functions = "netlify/functions"
-
-[functions."update-scores"]
-  schedule = "*/15 * * * *"
