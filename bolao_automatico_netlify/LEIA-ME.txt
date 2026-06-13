@@ -1,0 +1,29 @@
+# Bolão do Buarque — atualização automática
+
+Esta pasta contém:
+
+- `index.html`: o site enviado por você, sem alterações.
+- `netlify/functions/update-scores.mjs`: robô que consulta a API-Football.
+- `netlify.toml`: agenda o robô a cada 15 minutos.
+- `package.json`: dependência necessária para acessar o Firebase.
+
+## Variáveis necessárias no Netlify
+
+- `API_FOOTBALL_KEY`
+- `FIREBASE_SERVICE_ACCOUNT`
+
+## Funcionamento
+
+A cada 15 minutos, a função consulta os jogos da Copa 2026 do dia, encontra a partida correspondente no Firestore e atualiza:
+
+- placar;
+- minuto;
+- status;
+- placar do intervalo;
+- fechamento das apostas quando a partida começa.
+
+Para testar manualmente após publicar:
+
+`https://SEU-DOMINIO/.netlify/functions/update-scores`
+
+Nunca publique a chave da API ou o JSON do Firebase dentro desta pasta.
